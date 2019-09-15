@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Preventure Test</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+        <script>
+$(document).ready(function(){
+    $(".dropdown-trigger").dropdown();
+});
+        </script>
+        <style>
+            nav.nav-center ul {
+    text-align: center;
+}
+nav.nav-center ul li {
+    display: inline;
+    float: none;
+}
+nav.nav-center ul li a {
+    display: inline-block;
+}
+.topside{
+                margin-top: 5%;
+            }
+            .buttonposition{
+                position: relative;
+                margin-top: 0%;
+                margin-left: 34%;
+            }
+            
+        </style>
+    </head>
+    <body>
+            <ul id="dropdown1" class="dropdown-content">
+                    <li><a href="/destination">Common Destinations</a></li>
+                    <li><a href="/age">Age Groups</a></li>
+                    <li><a href="/revenue">Revenue</a></li>
+                    <li><a href="/trendlines">Trend Line</a></li>
+
+                  </ul>
+      <nav class="nav-center">
+            <div class="nav-wrapper">
+                    <ul class="center ">
+                            <li><a href="/toprevenue">Revenue</a></li>
+                            <li><a href="/repair">Repair</a></li>
+                            <li><a href="/filter">Filter</a></li>
+                    </ul>
+                  </div>
+      </nav> 
+      <div class="row">
+        <h3 class="center-align">Enter Station Name</h3>
+        <form class="col s12" method="POST" action="/filterdata">
+          <div class="row">
+            <div class="input-field col offset-s4 s4 topside">
+              <input placeholder="Station" id="station" name="station" type="text">
+              <label for="station">Station</label>
+            </div>
+         </div>
+            <div class="col-sm-9 buttonposition">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+
+      
+    </body>
+</html>
