@@ -1,0 +1,33 @@
+Use MySQl Database 
+
+Step:1 
+
+create a database
+
+Step:2
+
+Data Processing
+
+import pandas as pd
+data = pd.read_csv("/Users/siddardhakolanupaka/Downloads/datasets/dataset.csv")
+data['tripduration'] = data['tripduration'].str.replace(",","")
+data['tripduration'] = data['tripduration'].str.replace(".00","")
+data.to_csv("edited.csv")
+
+Step:3 
+
+create table 
+
+create table users (trip_id int, start_time datetime, end_time datetime, bikeid int, tripduration int, from_station_id int, from_station_name varchar(20), to_station_id int, to_station_name varchar(20), gender varchar(10), birthyear int, primary key(trip_id));
+
+Step:4
+
+Load dataset
+
+LOAD DATA LOCAL INFILE  '/Users/siddardhakolanupaka/Downloads/datasets/edited.csv' INTO TABLE users FIELDS TERMINATED BY ','  LINES TERMINATED BY '\n' IGNORE 1 ROWS (id,trip_id,@var1,@var2,bikeid,tripduration,from_station_id,from_station_name,to_station_id,to_station_name,gender,birthyear) SET start_time=STR_TO_DATE(@var1,'%d/%m/%Y %H:%i:%s'), end_time=STR_TO_DATE(@var2,'%d/%m/%Y %H:%i:%s');
+
+
+
+
+
+
