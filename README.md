@@ -11,7 +11,7 @@ Clone the project
 Database Commands are found on DatabaseCommands.txt
 ```
 ```
-Change the mysql environment varibale in index.js file
+Change the mysql environment varibales in index.js file
 ```
 
 ## Running project
