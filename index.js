@@ -9,10 +9,11 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
 
 var con=mysql.createConnection({
-    host:'localhost',
-    user:'root',
-    password: 'siddardha',
-    database:'app'
+    host:'sgp88.siteground.asia',
+    port:'3306',
+    user:'siddardh_pd',
+    password: 'Siddhu!995',
+    database:'siddardh_mydevelopertest'
 });
 
 con.connect(function(err){
@@ -137,6 +138,6 @@ app.get("/repair",function(req,res){
     });
 });
 
-app.listen(5000, function(){
+app.listen(process.env.PORT || 5000, function(){
     console.log("app running on port 5000");
 });
